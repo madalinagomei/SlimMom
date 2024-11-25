@@ -1,9 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL =
-  'https://drive.google.com/file/d/1QNSOH55DTFNyKmG6e8s1rMD7IFC4lVVI/view?usp=sharing';
-
-// const API_KEY = '';
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 
 const END_POINTS = {
   DailyCalorieIntake: '/api/products',
@@ -20,7 +17,7 @@ export const apiCalorieIntake = async body => {
 };
 
 export const apiUpdateInfoUser = async (token, body) => {
-  const res = await axios.patch(END_POINTS.UpdateUserInfo, body, {
+  const res = await axios.put(END_POINTS.UpdateUserInfo, body, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
