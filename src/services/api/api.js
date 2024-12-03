@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
-
 const END_POINTS = {
   DailyCalorieIntake: '/api/products',
   AddMyProduct: '/api/myProducts/addProduct',

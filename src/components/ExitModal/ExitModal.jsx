@@ -5,7 +5,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { useMediaQuery } from 'react-responsive';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#root');
 
 export const ExitModal = ({ onClose, handleLogout }) => {
   const isMobile = useMediaQuery({ query: '(max-width: 426px)' });
@@ -33,7 +33,7 @@ export const ExitModal = ({ onClose, handleLogout }) => {
             Are you sure you want to log out?
           </h2>
           <img
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/43d5c285197371.5d7503eab20c1.gif"
+            src="https://media.tenor.com/JkNeDPW3I4oAAAAi/ninja-bear-bam.gif"
             alt="cat"
             height={isMobile ? '300' : '400'}
           />

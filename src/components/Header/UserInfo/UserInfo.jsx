@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { useLogOutUserMutation } from 'redux/auth';
 import { logOut } from 'redux/authSlice';
 import { Exit, Name, Section } from './UserInfo.styled';
-import Switch from 'react-switch';
-import { FaTree } from 'react-icons/fa';
-import { GiFruitBowl } from 'react-icons/gi';
+// import Switch from 'react-switch';
+// import { FaTree } from 'react-icons/fa';
+// import { GiFruitBowl } from 'react-icons/gi';
 import { ExitModal } from 'components/ExitModal/ExitModal';
 
 export const BottomSection = ({ name }) => {
@@ -16,10 +16,10 @@ export const BottomSection = ({ name }) => {
   const body = document.querySelector('body');
 
   const [isModalOpened, setIsModalOpened] = useState(false);
-  const [isShowSwitch, setisShowSwitch] = useState(true);
+  // const [isShowSwitch, setisShowSwitch] = useState(true);
 
   const onModalClose = () => {
-    setIsModalOpened(isModalOpened => !isModalOpened);
+    setIsModalOpened(!isModalOpened);
     body.style.overflow = 'auto';
   };
 
@@ -36,49 +36,47 @@ export const BottomSection = ({ name }) => {
     setValue(false);
   };
 
-  const christmasThemeOn = () => {
-    const day = new Date().getDate();
-    const month = new Date().getMonth();
-    if (day >= 19 && month === 11) {
-      body.classList.add('christmas');
-      setValue(true);
-      setisShowSwitch(true);
-    } else if (day <= 19 && month === 11) {
-      body.classList.remove('christmas');
-      setValue(false);
-      setisShowSwitch(false);
-    } else if (day >= 15 && month === 0) {
-      body.classList.remove('christmas');
-      setValue(false);
-      setisShowSwitch(false);
-    }
-  };
+  // const christmasThemeOn = () => {
+  //   const day = new Date().getDate();
+  //   const month = new Date().getMonth();
+  //   if (day >= 19 && month === 11) {
+  //     body.classList.add('christmas');
+  //     setValue(true);
+  //     // setisShowSwitch(true);
+  //   } else if (day <= 19 && month === 11) {
+  //     body.classList.remove('christmas');
+  //     setValue(false);
+  //     // setisShowSwitch(false);
+  //   } else if (day >= 15 && month === 0) {
+  //     body.classList.remove('christmas');
+  //     setValue(false);
+  //     // setisShowSwitch(false);
+  //   }
+  // };
 
-  const [ischecked, setIsChecked] = useState(true);
+  // const [ischecked, setIsChecked] = useState(true);
 
-  const handleChange = () => {
-    setIsChecked(!ischecked);
-  };
-  if (ischecked) {
-    setTimeout(() => {
-      christmasThemeOn();
-    }, 100);
-  } else {
-    setTimeout(() => {
-      const body = document.querySelector('body');
-      body.classList.remove('christmas');
-      setValue(false);
-    }, 100);
-  }
+  // const handleChange = () => {
+  //   setIsChecked(!ischecked);
+  // };
+  // if (ischecked) {
+  //   setTimeout(() => {
+  //     christmasThemeOn();
+  //   }, 100);
+  // } else {
+  //   setTimeout(() => {
+  //     const body = document.querySelector('body');
+  //     body.classList.remove('christmas');
+  //     setValue(false);
+  //   }, 100);
+  // }
 
   return (
     <Section>
-      {isModalOpened && (
-        <ExitModal onClose={onModalClose} handleLogout={handleLogout} />
-      )}
+      {isModalOpened && <ExitModal onClose={onModalClose} handleLogout={handleLogout} />}
       <Name>{name}</Name>
-      <Exit onClick={() => setIsModalOpened(true)}>Exit</Exit>
-      {isShowSwitch && (
+      <Exit onClick={() => setIsModalOpened(!isModalOpened)}>Exit</Exit>
+      {/* {isShowSwitch && (
         <Switch
           onChange={handleChange}
           checked={ischecked}
@@ -110,7 +108,7 @@ export const BottomSection = ({ name }) => {
             />
           }
         />
-      )}
+      )} */}
     </Section>
   );
 };

@@ -3,12 +3,13 @@ import { createPortal } from 'react-dom';
 import { apiCalorieIntake } from 'services/api/api';
 import DailyCalorieIntake from 'components/DailyCalorieIntake/DailyCalorieIntake';
 import { Overlay, ModalWindow, CloseArrow, ButtonClose } from './Modal.styled';
-import { Loader } from 'components/Loader/Loader';
+// import { Loader } from 'components/Loader/Loader';
+import { LoaderNew } from 'components/LoaderNew/LoaderNew';
 import { useLocation } from 'react-router-dom';
 import { routes } from 'components/Routes/routes';
 import { useMediaQuery } from 'react-responsive';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#root');
 
 export const Modal = ({ onClose, children, userParams }) => {
   const [backResponse, setBackResponse] = useState(null);
@@ -72,7 +73,7 @@ export const Modal = ({ onClose, children, userParams }) => {
             userParams={userParams}
           />
         ) : (
-          <Loader />
+          <LoaderNew />
         )}
         {children}
         <ButtonClose type="button" onClick={onClose}></ButtonClose>
