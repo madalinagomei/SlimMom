@@ -33,7 +33,7 @@ export const ExitModal = ({ onClose, handleLogout }) => {
             Are you sure you want to log out?
           </h2>
           <img
-            src="https://media.tenor.com/JkNeDPW3I4oAAAAi/ninja-bear-bam.gif"
+            src="https://tenor.com/view/tuzki-usagi-jump-hole-bye-need-to-go-gif-13764239"
             alt="cat"
             height={isMobile ? '300' : '400'}
           />
