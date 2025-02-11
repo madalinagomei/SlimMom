@@ -46,5 +46,12 @@ Edit
 npm start
 Backend setup: Follow the backend README for API setup
 
+## 📸 Screenshots
+
+![image](https://github.com/user-attachments/assets/79289ad0-2d35-4905-a4ab-81707eafa43a)
+
+
+*Example of the app.* ☀️
+
 📧 Contact
 For any inquiries or suggestions, feel free to reach out! 🚀
